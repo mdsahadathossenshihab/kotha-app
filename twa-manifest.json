@@ -1,0 +1,57 @@
+{
+  "packageId": "app.kotha.bangla",
+  "host": "REPLACE_WITH_YOUR_DOMAIN",
+  "name": "কথা — মেসেজ ও অডিও কল",
+  "launcherName": "কথা",
+  "display": "standalone",
+  "themeColor": "#2b7fff",
+  "themeColorDark": "#0b3f93",
+  "navigationColor": "#2b7fff",
+  "navigationColorDark": "#0b3f93",
+  "navigationDividerColor": "#2b7fff",
+  "navigationDividerColorDark": "#0b3f93",
+  "backgroundColor": "#ffffff",
+  "enableNotifications": true,
+  "startUrl": "/app",
+  "iconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/app-icon.png",
+  "maskableIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/app-icon.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "2.1.0",
+  "appVersionCode": 3,
+  "shortcuts": [
+    {
+      "name": "চ্যাট",
+      "shortName": "চ্যাট",
+      "url": "/app",
+      "chosenIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/app-icon.png"
+    },
+    {
+      "name": "কল",
+      "shortName": "কল",
+      "url": "/app/calls",
+      "chosenIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/app-icon.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://REPLACE_WITH_YOUR_DOMAIN/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": { "enabled": false },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://REPLACE_WITH_YOUR_DOMAIN/",
+  "minSdkVersion": 23,
+  "orientation": "portrait",
+  "permissions": [
+    "android.permission.INTERNET",
+    "android.permission.RECORD_AUDIO",
+    "android.permission.MODIFY_AUDIO_SETTINGS",
+    "android.permission.VIBRATE",
+    "android.permission.WAKE_LOCK"
+  ]
+}

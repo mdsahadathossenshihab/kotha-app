@@ -1,0 +1,39 @@
+# নির্ভরতা
+node_modules
+.pnp
+.pnp.js
+
+# বিল্ড
+.next
+out
+build
+dist
+
+# পরিবেশ ভেরিয়েবল (গোপন — কখনো GitHub-এ দেবেন না)
+.env
+.env.local
+.env*.local
+
+# লগ
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# সিস্টেম
+.DS_Store
+Thumbs.db
+
+# এডিটর
+.vscode
+.idea
+
+# অ্যান্ড্রয়েড বিল্ড
+*.keystore
+*.apk
+*.aab
+android/
+
+# টাইপস্ক্রিপ্ট
+*.tsbuildinfo
+next-env.d.ts

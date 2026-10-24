@@ -1,0 +1,52 @@
+{
+  "name": "কথা — মেসেজ ও অডিও কল",
+  "short_name": "কথা",
+  "description": "বাংলায় বিনামূল্যে মেসেজ ও অডিও কল করার অ্যাপ",
+  "lang": "bn",
+  "dir": "ltr",
+  "id": "/app",
+  "start_url": "/app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#2b7fff",
+  "categories": [
+    "social",
+    "communication"
+  ],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "চ্যাট",
+      "url": "/app"
+    },
+    {
+      "name": "কল",
+      "url": "/app/calls"
+    },
+    {
+      "name": "প্রোফাইল",
+      "url": "/app/profile"
+    }
+  ]
+}

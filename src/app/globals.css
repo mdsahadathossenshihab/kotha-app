@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+:root {
+  --brand-50: #eef6ff;
+  --brand-100: #d9ecff;
+  --brand-400: #4f9cf9;
+  --brand-500: #2b7fff;
+  --brand-600: #1565e0;
+  --brand-700: #0f4ead;
+  --ink: #0b1b33;
+  --ink-soft: #5b6b85;
+  --line: #e7ecf4;
+  --surface: #ffffff;
+  --canvas: #f4f7fc;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+  overscroll-behavior-y: none;
+}
+
+/* ---------- ব্র্যান্ড সারফেস ---------- */
+.brand-grad {
+  background: linear-gradient(145deg, #2b7fff 0%, #1565e0 55%, #0b3f93 100%);
+}
+.brand-grad-soft {
+  background: linear-gradient(145deg, #4f9cf9 0%, #2b7fff 100%);
+}
+.brand-text {
+  background: linear-gradient(135deg, #2b7fff, #0b3f93);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.mesh {
+  position: relative;
+  overflow: hidden;
+}
+.mesh::before,
+.mesh::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+.mesh::before {
+  width: 240px;
+  height: 240px;
+  right: -70px;
+  top: -90px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22), transparent 68%);
+}
+.mesh::after {
+  width: 280px;
+  height: 280px;
+  left: -90px;
+  bottom: -140px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 68%);
+}
+
+/* ---------- কার্ড ও ইনপুট ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(11, 27, 51, 0.04), 0 8px 24px -12px rgba(11, 27, 51, 0.12);
+}
+.field {
+  width: 100%;
+  border-radius: 14px;
+  border: 1.5px solid var(--line);
+  background: #f8fafd;
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+.field:focus {
+  border-color: var(--brand-400);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(43, 127, 255, 0.1);
+}
+.field::placeholder {
+  color: #9aa8bf;
+}
+.label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* ---------- বাটন ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 14px;
+  font-weight: 600;
+  transition: transform 0.12s, box-shadow 0.18s, opacity 0.18s;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.985);
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+.btn-primary {
+  background: linear-gradient(145deg, #2b7fff, #1565e0);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(21, 101, 224, 0.65);
+}
+.btn-ghost {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  color: var(--ink);
+}
+.btn-soft {
+  background: var(--brand-50);
+  color: var(--brand-600);
+}
+
+/* ---------- চ্যাট ---------- */
+.chat-canvas {
+  background-color: #f4f7fc;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(43, 127, 255, 0.07) 0, transparent 34%),
+    radial-gradient(circle at 84% 72%, rgba(79, 156, 249, 0.09) 0, transparent 38%);
+}
+.bubble-out {
+  background: linear-gradient(145deg, #2b7fff, #1565e0);
+  color: #fff;
+  border-radius: 18px 18px 6px 18px;
+  box-shadow: 0 6px 16px -10px rgba(21, 101, 224, 0.8);
+}
+.bubble-in {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 18px 18px 18px 6px;
+}
+
+/* ---------- স্ক্রলবার ---------- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.thin-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #cfd9e8;
+  border-radius: 9999px;
+}
+
+/* ---------- অ্যানিমেশন ---------- */
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+  80%,
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+.ring-pulse::before,
+.ring-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  animation: ringPulse 1.9s ease-out infinite;
+}
+.ring-pulse::after {
+  animation-delay: 0.95s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.rise {
+  animation: rise 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.slide-up {
+  animation: slideUp 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e9eef6;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+.safe-b {
+  padding-bottom: env(safe-area-inset-bottom);
+}
